@@ -10,6 +10,7 @@ class Lojista(models.Model):
     é particular a cada um deles.
     """
     nome = models.CharField('Nome', max_length=60)
+    telefone = models.CharField('Telefone', max_length=15)
     endereco_web = models.URLField('Endereço web')
     data_cadastro = models.DateField('Data de cadastro', auto_now_add=True)
 

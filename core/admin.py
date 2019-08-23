@@ -5,4 +5,4 @@ from .models import Lojista
 
 @admin.register(Lojista)
 class LojistaModelAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['nome', 'telefone', 'endereco_web', 'data_cadastro']
