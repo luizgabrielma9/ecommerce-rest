@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from core.models import Lojista, Produto
+from core.models import Lojista, Produto, Estoque
 
 
 # Serializadores do ecommerce
@@ -33,5 +33,21 @@ class ProdutoSerializer(ModelSerializer):
             'data_cadastro',
         ]
         read_only_fields = ['data_cadastro',]
+
+
+class EstoqueSerializer(ModelSerializer):
+    """
+    Um serializador do modelo Estoque.
+    """
+    class Meta:
+        model = Estoque
+        fields = [
+            'id',
+            'produto',
+            'lojista',
+            'quantidade',
+            'preco_unitario',
+        ]
+        depth = 1
 
 
