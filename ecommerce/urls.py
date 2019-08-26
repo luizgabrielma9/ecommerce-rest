@@ -20,10 +20,11 @@ from django.urls import path, include
 from rest_framework import routers
 
 # A partir dos apps
-from core.api.viewsets import LojistaViewset
+from core.api.viewsets import LojistaViewset, ProdutoViewset
 
 router = routers.DefaultRouter()
 router.register(r'lojistas', LojistaViewset, basename='lojista')
+router.register(r'produtos', ProdutoViewset, basename='produto')
 
 urlpatterns = [
     path('', include(router.urls)),
