@@ -25,14 +25,11 @@ class ProdutoSerializer(ModelSerializer):
     """
     Um serializador do modelo Produto
     """
-    lojistas = LojistaSerializer(many=True)
-    
     class Meta:
         model = Produto
         fields = [
             'id',
             'nome',
-            'lojistas',
             'data_cadastro',
         ]
         read_only_fields = ['data_cadastro',]

@@ -24,7 +24,6 @@ class Produto(models.Model):
     nenhum ou vários lojistas.
     """
     nome = models.CharField('Nome', max_length=60)
-    lojistas = models.ManyToManyField(Lojista)
     data_cadastro = models.DateField('Data de cadastro', auto_now_add=True)
 
     def __str__(self):
@@ -39,7 +38,8 @@ class Estoque(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     lojista = models.ForeignKey(Lojista, on_delete=models.CASCADE)
     quantidade = models.IntegerField('Quantidade')
-    preco_unitario = models.DecimalField('Preço unitário (R$)', max_digits=12, decimal_places=2)
+    preco_unitario = models.DecimalField('Preço unitário (R$)', max_digits=12, \
+        decimal_places=2)
 
     def __str__(self):
         return str(self.produto) + ' do lojista ' + str(self.lojista) + ', com quantidade ' \
